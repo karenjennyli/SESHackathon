@@ -1,23 +1,98 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 
 import ListItem from "../Components/ListItem";
 
-items = [
-    { name: "milk", quantity: 1, note: "whole milk", bought: false },
-    { name: "eggs", quantity: 12, note: "", bought: false },
-    { name: "chicken", quantity: 1, note: "", bought: false },
-    { name: "milk", quantity: 1, note: "whole milk", bought: false },
-    { name: "milk", quantity: 100, note: "whole milk", bought: false },
+const defaultItems = [
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "JD",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "HS",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
+    {
+        name: "milk",
+        quantity: 1,
+        note: "whole milk",
+        bought: false,
+        user: "AV",
+    },
 ];
 
 export default function ShoppingList() {
+    const [items, setItems] = useState(defaultItems);
+
+    function updateQuantity(name, change) {
+        let newItems = items;
+        for (item in newItems) {
+            if (item.name == name) {
+                item.quantity = item.quantity + change;
+            }
+        }
+        setItems(newItems);
+    }
+
     return (
         <View style={styles.container}>
-            {items.map((item) => (
-                <ListItem info={item} />
-            ))}
+            <Text style={{ paddingTop: 50 }}>Shopping List</Text>
+            <ScrollView>
+                {items.map((item) => (
+                    <ListItem
+                        info={item}
+                        updateQuantity={() => this.updateQuantity}
+                    />
+                ))}
+            </ScrollView>
         </View>
     );
 }
@@ -25,5 +100,6 @@ export default function ShoppingList() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: "column",
+        alignItems: "center",
     },
 });
