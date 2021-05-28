@@ -85,9 +85,4 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         paddingTop: 50,
     },
-    line: {
-        width: 320,
-        borderTopColor: "white",
-        borderTopWidth: 1,
-    },
 });

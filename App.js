@@ -8,7 +8,7 @@ import Scanner from "./src/Pages/Scanner";
 export default function App() {
     return (
         <View style={styles.container}>
-            <Scanner />
+            <ShoppingListPage />
         </View>
     );
 }

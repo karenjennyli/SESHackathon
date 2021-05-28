@@ -76,12 +76,17 @@ export default class ShoppingList extends React.Component {
                                 paddingTop: 12,
                             }}
                         >
-                            <Text style={{ paddingRight: 10 }}>New Item</Text>
+                            <Text style={{ paddingRight: 10, color: "white" }}>
+                                New Item
+                            </Text>
                             <TouchableOpacity style={{}} onPress={() => {}}>
-                                <Icon name="plus" type="ant-design" />
+                                <Icon
+                                    name="plus"
+                                    type="ant-design"
+                                    color="white"
+                                />
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.line} />
                     </View>
                 </ScrollView>
             </View>
