@@ -63,7 +63,6 @@ export default function ShoppingListItem(props) {
                     color="white"
                 />
             </View>
-            <View style={styles.line} />
         </View>
     );
 }
@@ -78,10 +77,5 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingVertical: 7,
         alignItems: "center",
-    },
-    line: {
-        width: 320,
-        borderTopColor: "white",
-        borderTopWidth: 1,
     },
 });
