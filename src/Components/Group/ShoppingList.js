@@ -43,11 +43,10 @@ export default class ShoppingList extends React.Component {
     }
 
     updateQuantity = (name, change, note) => {
-        console.log(this.state.items);
         let newItems = this.state.items;
         for (var i in newItems) {
             var item = newItems[i];
-            if (item.key === name) {
+            if (item.name === name) {
                 newItems[i].quantity = item.quantity + change;
                 if (newItems[i].quantity > 99) newItems[i].quantity = 99;
                 if (newItems[i].quantity < 0) newItems[i].quantity = 0;
